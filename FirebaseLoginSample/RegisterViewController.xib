@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterViewController" customModule="FirebaseLoginSample" customModuleProvider="target">
+            <connections>
+                <outlet property="accountTextField" destination="oOd-xs-sRO" id="EYn-zs-h4G"/>
+                <outlet property="passwordTextField" destination="G1C-Ja-jmt" id="kzw-gP-DJy"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="輸入您的帳號" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oOd-xs-sRO">
+                    <rect key="frame" x="93.5" y="120" width="187.5" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="輸入您的密碼" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G1C-Ja-jmt">
+                    <rect key="frame" x="93.5" y="175" width="187.5" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Tq-TO-e4q">
+                    <rect key="frame" x="147" y="251" width="80" height="36"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="JqY-6n-4hr"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <state key="normal" title="註冊">
+                        <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    </state>
+                    <connections>
+                        <action selector="registerButtonDidPushed:" destination="-1" eventType="touchUpInside" id="Dae-0M-uEM"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="G1C-Ja-jmt" firstAttribute="top" secondItem="oOd-xs-sRO" secondAttribute="bottom" constant="25" id="34U-vH-Foy"/>
+                <constraint firstItem="G1C-Ja-jmt" firstAttribute="width" secondItem="oOd-xs-sRO" secondAttribute="width" id="Rj5-9X-RTd"/>
+                <constraint firstItem="4Tq-TO-e4q" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="TbY-Kk-sLq"/>
+                <constraint firstItem="oOd-xs-sRO" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Vsk-Vd-a8P"/>
+                <constraint firstItem="G1C-Ja-jmt" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="ZQZ-fJ-lss"/>
+                <constraint firstItem="4Tq-TO-e4q" firstAttribute="top" secondItem="G1C-Ja-jmt" secondAttribute="bottom" constant="46" id="aUk-kf-A9j"/>
+                <constraint firstItem="oOd-xs-sRO" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="b4I-Y6-SM9"/>
+                <constraint firstItem="oOd-xs-sRO" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="100" id="m5u-Hd-1LO"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="24.5" y="52.5"/>
+        </view>
+    </objects>
+</document>

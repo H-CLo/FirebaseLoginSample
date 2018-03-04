@@ -1,24 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3OK-8N-Ye4">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="FirebaseLoginSample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="請輸入您的電子信箱" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GFB-ii-hqD">
+                                <rect key="frame" x="94" y="164" width="187.5" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="請輸入您的密碼" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="66o-Ve-8ci">
+                                <rect key="frame" x="94" y="219" width="187.5" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Gd-M9-3ff">
+                                <rect key="frame" x="147" y="289" width="80" height="36"/>
+                                <color key="backgroundColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="4oP-uP-iJI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="登入">
+                                    <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginButtonDidPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iXt-69-8SS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aI6-iH-buk">
+                                <rect key="frame" x="137" y="408" width="100" height="36"/>
+                                <color key="backgroundColor" red="0.24495643077447538" green="0.34124291128890449" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="hES-6Y-png"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="我要註冊">
+                                    <color key="titleColor" red="0.72027189157384675" green="0.86129148949001533" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="showRegisterViewButtonDidPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N8R-Pd-Mwl"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="GFB-ii-hqD" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="93Y-X5-jsC"/>
+                            <constraint firstItem="GFB-ii-hqD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="LIf-sO-V7t"/>
+                            <constraint firstItem="66o-Ve-8ci" firstAttribute="top" secondItem="GFB-ii-hqD" secondAttribute="bottom" constant="25" id="P7F-x5-LFE"/>
+                            <constraint firstItem="3Gd-M9-3ff" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="X8l-po-zZG"/>
+                            <constraint firstItem="aI6-iH-buk" firstAttribute="top" secondItem="3Gd-M9-3ff" secondAttribute="bottom" constant="83" id="XbD-Ur-BWv"/>
+                            <constraint firstItem="66o-Ve-8ci" firstAttribute="width" secondItem="GFB-ii-hqD" secondAttribute="width" id="Y2C-yc-mAZ"/>
+                            <constraint firstItem="3Gd-M9-3ff" firstAttribute="top" secondItem="66o-Ve-8ci" secondAttribute="bottom" constant="40" id="eo5-LJ-BEO"/>
+                            <constraint firstItem="GFB-ii-hqD" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="jJE-zB-cZV"/>
+                            <constraint firstItem="66o-Ve-8ci" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="lnB-mw-Eh2"/>
+                            <constraint firstItem="aI6-iH-buk" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="twt-qu-Bh5"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="ODF-ns-ywr"/>
+                    <connections>
+                        <outlet property="accountTextField" destination="GFB-ii-hqD" id="7UL-fM-tAG"/>
+                        <outlet property="passwordTextField" destination="66o-Ve-8ci" id="uO7-Xn-1ux"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="364" y="31.934032983508249"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="JUQ-F8-lcB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3OK-8N-Ye4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JwE-yp-Xs4">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="VL1-Ot-zWv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QMx-nx-v8z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-337" y="32"/>
         </scene>
     </scenes>
 </document>
